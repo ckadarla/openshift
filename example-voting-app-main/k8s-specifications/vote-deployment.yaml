@@ -15,7 +15,7 @@ spec:
         app: vote
     spec:
       containers:
-      - image: rockchico2/votingapp/vote
+      - image: quay.io/rockchico2/votingapp/vote-ui
         name: vote
         ports:
         - containerPort: 80

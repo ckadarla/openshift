@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: aptible/nginx
+          image: quay.io/smikcp/nginx
           ports:
             - containerPort: 80
