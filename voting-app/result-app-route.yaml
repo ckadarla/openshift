@@ -1,0 +1,15 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: result-route
+  labels:
+    app: demo-voting-app
+spec:
+  to:
+    kind: Service
+    name: result-service
+  port:
+    targetPort: 80
+  tls:
+    termination: edge
+  wildcardPolicy: None
