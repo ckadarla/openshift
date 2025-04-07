@@ -1,21 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx
   labels:
-    app: nginx
+    app: worker
+  name: worker
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nginx
+      app: worker
   template:
     metadata:
       labels:
-        app: nginx
+        app: worker
     spec:
       containers:
-        - name: nginx
-          image: aptible/nginx
-          ports:
-            - containerPort: 80
+      - image: dockersamples/examplevotingapp_worker
+        name: worker
