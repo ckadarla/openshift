@@ -1,0 +1,15 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: hello-openshift
+  labels:
+    app: hello-openshift
+spec:
+  to:
+    kind: Service
+    name: hello-openshift
+  port:
+    targetPort: 8080
+  tls:
+    termination: edge
+  wildcardPolicy: None
