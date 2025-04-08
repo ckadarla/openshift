@@ -1,15 +1,17 @@
-apiVersion: route.openshift.io/v1
 kind: Route
+apiVersion: route.openshift.io/v1
 metadata:
-  name: voting-route
-  labels:
-    app: demo-voting-app
+  name: route-deaf-caribou
+  namespace: default
+  annotations:
+    openshift.io/host.generated: 'true'
 spec:
+ # host: route-deaf-caribou-default.apps-crc.testing
+  path: /
   to:
     kind: Service
-    name: voting-service
+    name: vote
+    weight: 100
   port:
-    targetPort: 8080
-  tls:
-    termination: edge
+    targetPort: vote-service
   wildcardPolicy: None

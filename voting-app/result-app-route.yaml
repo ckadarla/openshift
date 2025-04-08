@@ -1,15 +1,17 @@
-apiVersion: route.openshift.io/v1
 kind: Route
+apiVersion: route.openshift.io/v1
 metadata:
-  name: result-route
-  labels:
-    app: demo-voting-app
+  name: result
+  namespace: default
+  annotations:
+    openshift.io/host.generated: 'true'
 spec:
+  #host: result-default.apps-crc.testing
+  path: /
   to:
     kind: Service
-    name: result-service
+    name: result
+    weight: 100
   port:
-    targetPort: 80
-  tls:
-    termination: edge
+    targetPort: result-service
   wildcardPolicy: None
