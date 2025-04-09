@@ -5,6 +5,7 @@ metadata:
   labels:
     app: hello-openshift
 spec:
+  type: CluserIP
   selector:
     app: hello-openshift
   ports:
