@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: quay.io/smikcp/nginx
+          image: quay.io/smikcp/nginx:latest
           ports:
             - containerPort: 80

@@ -1,7 +1,7 @@
 kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
-  name: route-deaf-caribou
+  name: vote
   namespace: default
   annotations:
     openshift.io/host.generated: 'true'
